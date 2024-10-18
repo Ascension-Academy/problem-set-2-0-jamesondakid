@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    // Declare an array of strings to hold 5 color names
+    char colors[5][20];  // Array of 5 strings, each string up to 20 characters
+
+    // Ask the user to input 5 color names
+    printf("Please enter 5 color names:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Enter color %d: ", i + 1);
+        scanf("%s", colors[i]);  // Store the input in the array
+    }
+
+    // Loop through the array and print each color's position and name
+    for (int i = 0; i < 5; i++) {
+        printf("Array position %d contains %s\n", i + 1, colors[i]);
+    }
+
+    // Bonus: Ask the user to enter a position to print the color at that position
+    int position;
+    printf("Enter a position (1-5) to get the color at that position: ");
+    scanf("%d", &position);
+
+    // Ensure the user enters a valid position (between 1 and 5)
+    if (position >= 1 && position <= 5) {
+        printf("Color at position %d is %s\n", position, colors[position - 1]);
+    } else {
+        printf("Invalid position entered!\n");
+    }
+
+    return 0;
+}
